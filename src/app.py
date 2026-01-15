@@ -80,6 +80,16 @@ activities = {
 
 @app.get("/")
 def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/another-endpoint")
+def another_endpoint():
+    return {"expected_key": "This is another endpoint", "status": "active"}
+
+
+@app.get("/static-home")
+def static_home():
     return RedirectResponse(url="/static/index.html")
 
 
